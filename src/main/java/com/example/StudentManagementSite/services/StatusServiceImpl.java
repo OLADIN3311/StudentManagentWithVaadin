@@ -1,0 +1,26 @@
+package com.example.StudentManagementSite.services;
+
+import com.example.StudentManagementSite.entity.Status;
+import com.example.StudentManagementSite.repository.StatusRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class StatusServiceImpl implements StatusService {
+
+    @Autowired
+    private StatusRepository statusRepository;
+
+    @Override
+    public void save(Status status) {
+        statusRepository.save(status);
+    }
+
+    @Override
+    public List<Status> findAll() {
+        return statusRepository.findAll();
+    }
+
+}
